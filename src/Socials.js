@@ -5,10 +5,12 @@ class Social extends Component {
         
     render() {
 
-        const {id, name, link} = this.props.social
+        const {id, name, link, image} = this.props.social
 
         return(
-            <div style={{display: 'inline-block', margin: 10} }>{name}</div>
+            <div style={{display: 'inline-block', margin: 10} }>
+                <a href={link}><img src={image} alt='profile' style={{width: 30, height: 30 }} /></a>
+            </div>
         )
     }
 }
