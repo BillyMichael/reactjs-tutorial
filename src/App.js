@@ -4,17 +4,11 @@ class App extends Component{
     constructor() {
         super();
         this.state = { displayBio: false };
-        this.readMore = this.readMore.bind(this)
+        this.toggleDisplayBio = this.toggleDisplayBio.bind(this)
     }
 
-    readMore() {
-        console.log(this)
-        this.setState({displayBio: true})
-    }
-
-    showLess() {
-        console.log(this)
-        this.setState({displayBio: false})
+    toggleDisplayBio() {
+        this.setState({displayBio: !this.state.displayBio})
     }
 
     render() {
@@ -27,11 +21,11 @@ class App extends Component{
                         <div>
                         <p>Im current learning reactJs</p>
                         <p>I like triathlon</p>
-                        <button onClick={this.showLess}>Show less</button>
+                        <button onClick={this.toggleDisplayBio}>Show less</button>
                         </div>
                     ) : (
                         <div>
-                            <button onClick={this.readMore}>Read More</button>
+                            <button onClick={this.toggleDisplayBio}>Read More</button>
                         </div>
                     )
                 }
